@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toastify-color-light: #d4d4d8;
+  --toastify-text-color-light: #27272a;
+  --toastify-color-progress-light: #27272a;
+}
+
+body {
+  background-color: #e2e8f0;
+}
