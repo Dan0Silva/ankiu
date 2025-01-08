@@ -4,8 +4,7 @@ import Header from '../../components/Header';
 import { useState } from 'react';
 
 export default () => {
-  const photo =
-    'https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+  const photo = '/images/background1.jpg';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
