@@ -14,6 +14,15 @@ export default () => {
       <div className="flex flex-col h-full w-5/12">
         <Header />
         <div className="items-center justify-center flex mb-28 flex-1 flex-col py-16">
+          {/* <div className="w-8/12 px-4 items-center justify-center flex flex-col mb-8 mt-11">
+            
+          </div> */}
+
+          {/* <div className="h-1 w-full bg-zinc-800 mb-2 mx-4" /> */}
+          <h2 className="text-4xl w-8/12 ml-8 mb-8 font-medium text-zinc-800">
+            Login
+          </h2>
+
           <CustomInput
             value={email}
             onChange={setEmail}
