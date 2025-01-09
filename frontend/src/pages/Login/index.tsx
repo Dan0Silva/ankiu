@@ -1,24 +1,27 @@
+import { useNavigate } from 'react-router-dom';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import Header from '../../components/Header';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default () => {
   const photo = '/images/background1.jpg';
 
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const onCreateAccount = () => {
+    navigate('/register');
+  };
 
   return (
     <div className="flex flex-row h-screen w-screen">
       <div className="flex flex-col h-full w-5/12">
         <Header />
         <div className="items-center justify-center flex mb-28 flex-1 flex-col py-16">
-          {/* <div className="w-8/12 px-4 items-center justify-center flex flex-col mb-8 mt-11">
-            
-          </div> */}
-
-          {/* <div className="h-1 w-full bg-zinc-800 mb-2 mx-4" /> */}
           <h2 className="text-4xl w-8/12 ml-8 mb-8 font-medium text-zinc-800">
             Login
           </h2>
@@ -43,7 +46,8 @@ export default () => {
               content="Sign-in"
               className="w-full"
               onClick={() => {
-                alert(email + '-' + password);
+                // try login
+                toast('try login');
               }}
             />
           </div>
@@ -58,9 +62,7 @@ export default () => {
             <CustomButton
               content="Create your account "
               className="w-full bg-blue-700 hover:bg-blue-600"
-              onClick={() => {
-                alert(email + '-' + password);
-              }}
+              onClick={onCreateAccount}
             />
           </div>
         </div>
