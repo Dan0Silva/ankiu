@@ -4,6 +4,7 @@ import CustomInput from '../../components/CustomInput';
 import Header from '../../components/Header';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import PasswordInput from '../../components/PasswordInput';
 
 export default () => {
   const photo = '/images/background1.jpg';
@@ -30,14 +31,13 @@ export default () => {
             value={email}
             onChange={setEmail}
             type="text"
-            placeholder="E-mail..."
+            placeholder="Type your email . . ."
             name="E-mail"
           />
-          <CustomInput
+          <PasswordInput
             value={password}
             onChange={setPassword}
-            type="text"
-            placeholder="Password..."
+            placeholder="Type your password . . ."
             name="Password"
           />
 
