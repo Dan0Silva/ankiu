@@ -23,7 +23,7 @@ export default () => {
       <div className="flex flex-col h-full w-full lg:w-5/12">
         <Header />
         <div className="items-center justify-center flex mb-28 flex-1 flex-col py-16">
-          <h2 className="text-4xl w-8/12 ml-8 mb-8 font-medium text-zinc-800">
+          <h2 className="text-4xl w-10/12 sm:w-8/12 ml-8 mb-8 font-medium text-zinc-800">
             Login
           </h2>
 
@@ -41,7 +41,7 @@ export default () => {
             name="Password"
           />
 
-          <div className="h-24 flex items-center w-8/12 px-4 justify-start space-x-8 mt-16">
+          <div className="h-24 flex items-center w-10/12 sm:w-8/12 px-4 justify-start space-x-8 mt-16">
             <CustomButton
               content="Sign-in"
               className="w-full"
@@ -52,13 +52,13 @@ export default () => {
             />
           </div>
 
-          <div className="flex items-center w-8/12 px-4 justify-start space-x-8">
+          <div className="flex items-center w-10/12 sm:w-8/12 px-4 justify-start space-x-8">
             <div className="bg-zinc-800 h-1 w-full" />
             <p>or</p>
             <div className="bg-zinc-800 h-1 w-full" />
           </div>
 
-          <div className="h-24 flex items-center w-8/12 px-4 justify-start space-x-8">
+          <div className="h-24 flex items-center w-10/12 sm:w-8/12 px-4 justify-start space-x-8">
             <CustomButton
               content="Create your account "
               className="w-full bg-blue-700 hover:bg-blue-600"
