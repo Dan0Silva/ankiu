@@ -19,7 +19,7 @@ export default () => {
 
   return (
     <div className="flex flex-row h-screen w-screen">
-      <div className="flex flex-col h-full w-5/12">
+      <div className="flex flex-col h-full w-full lg:w-5/12">
         <Header />
         <div className="items-center justify-center flex mb-28 flex-1 flex-col py-16">
           <h2 className="text-4xl w-8/12 ml-8 mb-8 font-medium text-zinc-800">
@@ -67,7 +67,7 @@ export default () => {
           </div>
         </div>
       </div>
-      <div className="h-full w-7/12 p-4">
+      <div className="h-full w-7/12 p-4 hidden lg:block">
         <img
           src={photo}
           alt="bg-image"
