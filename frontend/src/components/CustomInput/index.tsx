@@ -17,7 +17,7 @@ export default (props: TextInputProps) => {
       <input
         onChange={handlePropertyChange}
         value={props.value}
-        className="h-12 rounded-md px-4 mt-2 bg-gray-800 text-white placeholder:text-white shadow-md"
+        className="h-12 rounded-md px-4 mt-2 bg-gray-800 text-white placeholder:text-zinc-400 shadow-md"
         type={props.type}
         placeholder={props.placeholder}
       />
