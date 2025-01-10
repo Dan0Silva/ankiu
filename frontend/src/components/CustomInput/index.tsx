@@ -12,7 +12,7 @@ export default (props: TextInputProps) => {
   };
 
   return (
-    <div className="h-28 w-8/12 justify-center flex flex-col px-4">
+    <div className="h-28 w-10/12 sm:w-8/12 justify-center flex flex-col px-4">
       <p className="text-zinc-800 font-semibold text-xl">{props.name}</p>
       <input
         onChange={handlePropertyChange}
