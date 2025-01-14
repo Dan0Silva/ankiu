@@ -14,17 +14,17 @@ export default () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onCreateAccount = () => {
-    navigate('/register');
+  const onLogin = () => {
+    navigate('/');
   };
 
   return (
     <div className="flex flex-row h-screen w-screen">
       <div className="flex flex-col h-full w-full lg:w-5/12">
         <Header />
-        <div className="items-center justify-center flex mb-28 flex-1 flex-col py-16">
+        <form className="items-center justify-center flex mb-28 flex-1 flex-col py-16">
           <h2 className="text-4xl w-10/12 sm:w-8/12 ml-8 mb-8 font-medium text-zinc-800">
-            Login
+            Register
           </h2>
 
           <CustomInput
@@ -43,11 +43,11 @@ export default () => {
 
           <div className="h-24 flex items-center w-10/12 sm:w-8/12 px-4 justify-start space-x-8 mt-16">
             <CustomButton
-              content="Sign-in"
+              content="Create account"
               className="w-full"
               onClick={() => {
-                // try login
-                toast('try login');
+                // try create account
+                toast('try create account');
               }}
             />
           </div>
@@ -60,12 +60,13 @@ export default () => {
 
           <div className="h-24 flex items-center w-10/12 sm:w-8/12 px-4 justify-start space-x-8">
             <CustomButton
-              content="Create your account "
+              type="button"
+              content="Already have an account ?"
               className="w-full bg-blue-700 hover:bg-blue-600"
-              onClick={onCreateAccount}
+              onClick={onLogin}
             />
           </div>
-        </div>
+        </form>
       </div>
       <div className="h-full w-7/12 p-4 hidden lg:block">
         <img
