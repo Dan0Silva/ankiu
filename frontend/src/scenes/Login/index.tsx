@@ -20,14 +20,18 @@ export default () => {
   };
 
   const tryLogin = () => {
-    const authResponse = validate(email, password);
+    const authResponse = validate({
+      name: '',
+      email,
+      password,
+    });
 
     if (authResponse) {
-      navigate('/home');
       toast.success('Login Successful!');
+      navigate('/home');
+    } else {
+      toast.error('Incorrect email or password');
     }
-
-    toast.error('Incorrect email or password');
   };
 
   return (
