@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { User } from '../../../data/types/user';
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 type UserContextType = {
   user: User | null;
@@ -12,16 +12,18 @@ type UserContextType = {
   isLoggedIn: () => boolean;
 };
 
-type Props = { children: React.ReactNode };
+interface ContextProps {
+  children: React.ReactNode;
+}
 
 const UserContext = createContext<UserContextType>({} as UserContextType);
 
-export const UserProvider = ({ children }: Props) => {
-  const navigate = useNavigate();
+export const UserProvider = ({ children }: ContextProps) => {
+  // const navigate = useNavigate();
 
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
-  const [isReady, setIsReady] = useState(false); // serve para verificar se um usuário está pronto (logado) ou nao
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const user = localStorage.getItem('user');
@@ -37,7 +39,9 @@ export const UserProvider = ({ children }: Props) => {
 
   const registerUser = (name: string, email: string, password: string) => {};
 
-  const loginUser = (user: User) => {};
+  const loginUser = (user: User) => {
+    toast('teste de login');
+  };
 
   const logout = () => {};
 
@@ -49,7 +53,17 @@ export const UserProvider = ({ children }: Props) => {
     <UserContext.Provider
       value={{ user, token, registerUser, loginUser, logout, isLoggedIn }}
     >
-      {children}
+      {isReady ? (
+        children
+      ) : (
+        <>
+          <p>Loading...</p>
+        </>
+      )}
     </UserContext.Provider>
   );
+};
+
+export const useAuthContext = () => {
+  return React.useContext(UserContext);
 };
