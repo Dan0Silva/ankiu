@@ -7,10 +7,10 @@ import (
 	"github.com/Dan0Silva/ankiu/backend/src/models"
 )
 
-func sendReponse(w http.ResponseWriter, message string, statusCode int, data interface{}) {
+func sendReponse(w http.ResponseWriter, message ReponseMessage, statusCode int, data interface{}) {
 	responseStruct := models.Response{
 		Status: statusCode,
-		Message: message,
+		Message: message.String(),
 		Data: nil,
 	}
 
@@ -27,9 +27,9 @@ func sendReponse(w http.ResponseWriter, message string, statusCode int, data int
 }
 
 func Success(w http.ResponseWriter, statusCode int, data interface{}){
-	sendReponse(w, "Request was successfuly!", statusCode, data)
+	sendReponse(w, RequestSuccess, statusCode, data)
 }
 
-func Error(w http.ResponseWriter, message string, statusCode int, data interface{}) {
+func Error(w http.ResponseWriter, message ReponseMessage, statusCode int, data interface{}) {
 	sendReponse(w, message, statusCode, data)
 } 

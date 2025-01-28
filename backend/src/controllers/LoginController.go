@@ -6,19 +6,27 @@ import (
 	"net/http"
 
 	"github.com/Dan0Silva/ankiu/backend/src/models"
+	"github.com/Dan0Silva/ankiu/backend/src/response"
 )
 
 func Login(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 
 	requestBody, err := io.ReadAll(r.Body)
-	if err != nil {
-		// creating a message module
+	if err == nil {
+		response.Error(w, response.ReadRequestBodyError, http.StatusBadRequest, nil)
+		return
 	}
 
 	if err = json.Unmarshal(requestBody, &user); err != nil {
-		// creating a message module
+		response.Error(w, response.ConvertRequestBodyToJSONError, http.StatusInternalServerError, nil)
+		return
 	}
 
 	// creating a db connection
+
+
+	/*
+		continuar com padronização nas strings das respostas da api
+	*/
 }
