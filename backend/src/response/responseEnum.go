@@ -7,13 +7,19 @@ const (
 	
 	ReadRequestBodyError 
 	ConvertRequestBodyToJSONError
+	DatabaseConnectionError
+	GetDBInformationError
+	LoginError
 )
 
 func (r ReponseMessage) String() string {
 	return [...]string{
-		"request was successfuly", 										// RequestSuccess
+		"request was successfuly", 													// RequestSuccess
 		
-		"error to try read request body", 						// ReadRequestBodyError
-		"error to try convert request body to JSON",	// ConvertRequestBodyToJSONError
-	}[r-1]
+		"error trying read request body", 									// ReadRequestBodyError
+		"error trying convert request body to JSON",				// ConvertRequestBodyToJSONError
+		"error trying to establish database connection",  	// DatabaseConnectionError
+		"error trying get information from database",				// GetDBInformationError
+		"error trying loggin",															// LoginError
+		}[r-1]
 }
