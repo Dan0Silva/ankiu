@@ -1,19 +1,14 @@
 package router
 
 import (
-	"net/http"
-
+	"github.com/Dan0Silva/ankiu/backend/src/router/routes"
 	"github.com/gorilla/mux"
 )
 
-func loginFunc(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("testing"))
-}
 
 func Generate() *mux.Router {
 	newRouter := mux.NewRouter()
-
-	newRouter.HandleFunc("/login", loginFunc)
+	routes.GenerateRoutes(newRouter)
 
 	return newRouter
 }

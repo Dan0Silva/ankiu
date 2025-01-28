@@ -13,7 +13,7 @@ type Routes struct {
 	RequireAuth bool
 }
 
-func GenerateRoutes(router *mux.Router) {
+func GenerateRoutes(router *mux.Router){
 	allRoutes := []Routes{}
 
 	// append other routes in allRoutes

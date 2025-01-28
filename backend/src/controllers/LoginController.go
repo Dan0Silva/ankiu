@@ -21,5 +21,4 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// creating a db connection
-
 }
