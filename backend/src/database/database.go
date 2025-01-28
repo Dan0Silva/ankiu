@@ -3,12 +3,13 @@ package database
 import (
 	"database/sql"
 
+	"github.com/Dan0Silva/ankiu/backend/src/config"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 
 func Connect() (*sql.DB, error){
-	db, err := sql.Open("mysql", "")
+	db, err := sql.Open("mysql", config.StringConnectionDB)
 	if err != nil {
 		return nil, err
 	}
