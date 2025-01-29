@@ -5,14 +5,15 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/Dan0Silva/ankiu/backend/src/config"
 	"github.com/Dan0Silva/ankiu/backend/src/router"
 )
 
 func main() {
-	port := 5000
+	config.LoadEnvirolment()
 
 	routes := router.Generate()
 
-	fmt.Printf("\n _> API running on port: %d\n\n", port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), routes))
+	fmt.Printf("\n _> API running on port: %s\n\n", config.Port)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", config.Port), routes))
 }
